@@ -1,0 +1,9 @@
+{
+  "python": "Daisykit Python",
+  "face_detection": "Face Detection",
+  "human_pose": "Human Pose Estimation",
+  "background_matting": "Background Matting",
+  "hand_pose": "Hand Pose Estimation",
+  "barcode": "Barcode Detection",
+  "object_detection": "Object Detection"
+}

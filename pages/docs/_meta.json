@@ -1,0 +1,22 @@
+{
+  "index": "Introduction",
+  "-- Tutorials": {
+    "type": "separator",
+    "title": "Tutorials"
+  },
+  "python": "Python",
+  "cpp": "C++",
+  "-- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "about-link": {
+    "title": "About Daisykit",
+    "href": "/about"
+  },
+  "next.js-link": {
+    "title": "Neural Research Lab ↗",
+    "href": "https://nrl.ai",
+    "newWindow": true
+  }
+}

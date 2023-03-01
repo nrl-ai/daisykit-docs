@@ -1,0 +1,125 @@
+# Daisykit - D.A.I.S.Y: Deploy AI Systems Yourself!
+
+<p class="nx-mt-6 nx-leading-7 first:nx-mt-0 flex gap-1">
+    <a href="https://pypi.org/project/daisykit" target="_blank" rel="noreferrer"
+        class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">
+        <img src="https://img.shields.io/pypi/v/daisykit" alt="PyPI"></img>
+    </a>
+    <a href="https://daisykit.readthedocs.io/en/latest/" target="_blank" rel="noreferrer"
+        class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">
+        <img src="https://img.shields.io/badge/docs-latest-blue" alt="docs"></img>
+    </a>
+    <a href="https://github.com/nrl-ai/daisykit/blob/master/LICENSE" target="_blank" rel="noreferrer"
+        class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">
+        <img src="https://img.shields.io/github/license/nrl-ai/daisykit.svg" alt="license"></img>
+    </a>
+    <a href="https://github.com/nrl-ai/daisykit/issues" target="_blank" rel="noreferrer"
+        class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">
+        <img src="https://isitmaintained.com/badge/open/nrl-ai/daisykit.svg" alt="open issues"></img>
+    </a>
+    <a href="https://pypi.org/project/daisykit/" target="_blank" rel="noreferrer"
+        class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">
+        <img src="https://pepy.tech/badge/daisykit/month" alt="Pypi Downloads"></img>
+    </a>
+</p>
+
+[Daisykit](https://daisykit.nrl.ai/) is an easy AI toolkit with face mask detection, pose detection, background matting, barcode detection and more. This open source project includes:
+
+- **Daisykit SDK - C++**, the core of models and algorithms in NCNN deep learning framework.
+- **Daisykit Python** wrapper for easy integration with Python.
+- **Daisykit Android** - Example app demonstrate how to use Daisykit SDK in Android.
+
+**Links:**
+
+- **Python Package:** [https://pypi.org/project/daisykit/](https://pypi.org/project/daisykit/)
+- **Documentation:** [daisykit.nrl.ai](https://daisykit.nrl.ai)
+
+<a href="https://www.youtube.com/watch?v=zKP8sgGoFMc">
+  <img src="https://img.youtube.com/vi/zKP8sgGoFMc/maxresdefault.jpg"></img>
+</a>
+
+**Demo Video:** [https://www.youtube.com/watch?v=zKP8sgGoFMc](https://www.youtube.com/watch?v=zKP8sgGoFMc).
+
+## 1. Environment Setup
+
+### Ubuntu
+
+Install packages from Terminal
+
+```bash
+sudo apt install -y build-essential libopencv-dev
+sudo apt install -y libvulkan-dev vulkan-utils
+sudo apt install -y mesa-vulkan-drivers # For Intel GPU support
+```
+
+### Windows
+
+For Windows, Visual Studio 2019 + Git Bash is recommended.
+
+- Download and extract OpenCV from [the official website](https://opencv.org/releases/), and add `OpenCV_DIR` to path.
+- Download [precompiled NCNN](https://github.com/Tencent/ncnn/releases).
+
+## 2. Build and run C++ examples
+
+Clone the source code:
+
+```
+git clone https://github.com/nrl-ai/daisykit.git --recursive
+cd daisykit
+```
+### Ubuntu
+
+Build Daisykit:
+
+
+```bash
+mkdir build
+cd build
+cmake .. -Dncnn_FIND_PATH="<path to ncnn lib>"
+make
+```
+
+Run face detection example:
+
+```bash
+./bin/demo_face_detector_graph
+```
+
+If you dont specify `ncnn_FIND_PATH`, NCNN will be built from scratch.
+
+### Windows
+
+Build Daisykit:
+
+
+```bash
+mkdir build
+cd build
+cmake -G "Visual Studio 16 2019" -Dncnn_FIND_PATH="<path to ncnn lib>" ..
+cmake --build . --config Release
+```
+
+Run face detection example:
+
+```bash
+./bin/Release/demo_face_detector_graph
+```
+
+## 3. C++ Coding convention
+
+Read coding convention and contribution guidelines [here](/en/latest/contribution.html).
+
+## 4. Known issues and problems
+
+- **Slow model inference - Low FPS**
+
+This issue can happen on development build. Add `-DCMAKE_BUILD_TYPE=Debug` to `cmake` command and build again. The FPS can be much better.
+
+## 5. References
+
+This toolkit is developed on top of other source code. Including
+
+- Toolchains setup from [ncnn](https://github.com/Tencent/ncnn).
+- QR Scanner from [ZXing-CPP](https://github.com/nu-book/zxing-cpp).
+- JSON support from [nlohmann/json](https://github.com/nlohmann/json).
+- Pretrained AI models from different sources: [/models](/models).
