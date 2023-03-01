@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 
 const logo = (
   <span>
-    <img className='h-8 w-auto' src="https://docs.daisykit.org/en/latest/_static/logo_with_text.svg"></img>
+    <img className='h-9 w-auto dark:hidden' src="/logo_with_text.svg"></img>
+    <img className='h-9 w-auto hidden dark:block' src="/logo_with_text_light.svg"></img>
     <style jsx>{`
       span {
         padding: 0.5rem 0.5rem 0.5rem 0;
