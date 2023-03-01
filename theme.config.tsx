@@ -44,8 +44,8 @@ const config: DocsThemeConfig = {
     const { route } = useRouter()
     const socialCard =
       route === '/' || !title
-        ? 'https://nextra.site/og.jpeg'
-        : `https://nextra.site/api/og?title=${title}`
+        ? 'https://daisykit.nrl.ai/og.jpeg'
+        : `https://daisykit.nrl.ai/api/og?title=${title}`
 
     return (
       <>
@@ -55,11 +55,11 @@ const config: DocsThemeConfig = {
         <meta httpEquiv="Content-Language" content="en" />
         <meta
           name="description"
-          content="Make beautiful websites with Next.js & MDX."
+          content="An easy AI toolkit with face mask detection, pose detection, background matting, barcode detection and more."
         />
         <meta
           name="og:description"
-          content="Make beautiful websites with Next.js & MDX."
+          content="An easy AI toolkit with face mask detection, pose detection, background matting, barcode detection and more."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={socialCard} />
