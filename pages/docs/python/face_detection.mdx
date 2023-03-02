@@ -1,5 +1,6 @@
-# Python: Face Detection
+import Youtube from 'components/video/youtube.jsx'
 
+# Python: Face Detection
 
 Face detector flow in Daisykit contains a face detection model based on
 [*YOLO Fastest*](https://github.com/dog-qiuqiu/Yolo-Fastest) and a
@@ -11,7 +12,14 @@ masks or not.
 
 ![](/images/python/image5.png)
 
-![](/images/python/image14.gif)
+<Youtube
+    url={`https://www.youtube.com/embed/PgR5wDFZils`}
+    light={true}
+    controls={true}
+    playbackRate={1}
+    playing={true}
+    autoPlay={true}
+/>
 
 Let’s see into the source code below to understand how to run this model
 with your webcam. First, we initialize the flow with a `config`
