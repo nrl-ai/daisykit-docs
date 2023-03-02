@@ -1,11 +1,16 @@
-import type { DocsThemeConfig} from 'nextra-theme-docs';
-import { useConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
+import type { DocsThemeConfig } from "nextra-theme-docs";
+import { useConfig } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 
 const logo = (
-  <span>
-    <img className='h-9 w-auto dark:hidden' src="/logo_with_text.svg"></img>
-    <img className='h-9 w-auto hidden dark:block' src="/logo_with_text_light.svg"></img>
+  <>
+    <div className="flex flex-col">
+      <img className="h-9 w-auto dark:hidden" src="/logo_with_text.svg"></img>
+      <img
+        className="h-9 w-auto hidden dark:block"
+        src="/logo_with_text_light.svg"
+      ></img>
+    </div>
     <style jsx>{`
       span {
         padding: 0.5rem 0.5rem 0.5rem 0;
@@ -23,30 +28,30 @@ const logo = (
         transition: mask-position 1s ease, -webkit-mask-position 1s ease;
       }
     `}</style>
-  </span>
-)
+  </>
+);
 
 const config: DocsThemeConfig = {
   project: {
-    link: 'https://github.com/nrl-ai/daisykit'
+    link: "https://github.com/nrl-ai/daisykit",
   },
-  docsRepositoryBase: 'https://github.com/nrl-ai/daisykit-docs',
+  docsRepositoryBase: "https://github.com/nrl-ai/daisykit-docs",
   useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
+    const { asPath } = useRouter();
+    if (asPath !== "/") {
       return {
-        titleTemplate: '%s – Daisykit'
-      }
+        titleTemplate: "%s – Daisykit",
+      };
     }
   },
   logo,
   head: function useHead() {
-    const { title } = useConfig()
-    const { route } = useRouter()
+    const { title } = useConfig();
+    const { route } = useRouter();
     const socialCard =
-      route === '/' || !title
-        ? 'https://daisykit.nrl.ai/og.jpeg'
-        : `https://daisykit.nrl.ai/api/og?title=${title}`
+      route === "/" || !title
+        ? "https://daisykit.nrl.ai/og.jpeg"
+        : `https://daisykit.nrl.ai/api/og?title=${title}`;
 
     return (
       <>
@@ -68,7 +73,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:url" content="https://nextra.site" />
         <meta
           name="og:title"
-          content={title ? title + ' – Nextra' : 'Nextra'}
+          content={title ? title + " – Nextra" : "Nextra"}
         />
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="Nextra" />
@@ -87,29 +92,29 @@ const config: DocsThemeConfig = {
           media="(prefers-color-scheme: light)"
         />
       </>
-    )
+    );
   },
   banner: {
-    key: 'daisylab-to-nrl',
+    key: "daisylab-to-nrl",
     text: (
       <a href="https://nrl.ai" target="_blank" rel="noreferrer">
         🎉 DaisyLab now has become Neural Research Lab (NRL) 🎉
       </a>
-    )
+    ),
   },
   editLink: {
-    text: 'Edit this page on GitHub →'
+    text: "Edit this page on GitHub →",
   },
   feedback: {
-    content: 'Question? Give us feedback →',
-    labels: 'feedback'
+    content: "Question? Give us feedback →",
+    labels: "feedback",
   },
   sidebar: {
     titleComponent({ title, type }) {
-      if (type === 'separator') {
-        return <span className="cursor-default">{title}</span>
+      if (type === "separator") {
+        return <span className="cursor-default">{title}</span>;
       }
-      return <>{title}</>
+      return <>{title}</>;
     },
     defaultMenuCollapseLevel: 2,
     toggleButton: true,
@@ -125,16 +130,21 @@ const config: DocsThemeConfig = {
             title="Neural Research Lab Website"
             href="https://nrl.ai"
           >
-            <span>Developed by </span>
-            <b>Neural Research Lab (NRL.AI)</b>
+            <div className="pt-0 mt-0">
+              Developed by{" "}
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 text-bold">
+                NeuralResearchLab
+              </span>
+              .
+            </div>
           </a>
         </div>
-        <p className="mt-6 text-xs">
+        <p className="mt-2 text-xs">
           © {new Date().getFullYear()} The Daisykit Project.
         </p>
       </div>
-    )
-  }
-}
+    ),
+  },
+};
 
-export default config
+export default config;
