@@ -25,8 +25,8 @@ For Windows, Visual Studio 2019 + Git Bash is recommended.
 
 Clone the source code:
 
-```
-git clone https://github.com/DaisyLabSolutions/daisykit.git --recursive
+```bash
+git clone https://github.com/nrl-ai/daisykit.git --recursive
 cd daisykit
 ```
 ### Ubuntu
@@ -34,7 +34,7 @@ cd daisykit
 Build Daisykit:
 
 
-```
+```bash
 mkdir build
 cd build
 cmake .. -Dncnn_FIND_PATH="<path to ncnn lib>"
@@ -43,7 +43,7 @@ make
 
 Run face detection example:
 
-```
+```bash
 ./bin/demo_face_detector_graph
 ```
 
@@ -54,7 +54,7 @@ If you dont specify `ncnn_FIND_PATH`, NCNN will be built from scratch.
 Build Daisykit:
 
 
-```
+```bash
 mkdir build
 cd build
 cmake -G "Visual Studio 16 2019" -Dncnn_FIND_PATH="<path to ncnn lib>" ..
@@ -63,7 +63,7 @@ cmake --build . --config Release
 
 Run face detection example:
 
-```
+```bash
 ./bin/Release/demo_face_detector_graph
 ```
 

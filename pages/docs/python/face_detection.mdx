@@ -1,5 +1,6 @@
-# Python: Face Detection
+import Youtube from 'components/video/youtube.jsx'
 
+# Python: Face Detection
 
 Face detector flow in Daisykit contains a face detection model based on
 [*YOLO Fastest*](https://github.com/dog-qiuqiu/Yolo-Fastest) and a
@@ -11,14 +12,21 @@ masks or not.
 
 ![](/images/python/image5.png)
 
-![](/images/python/image14.gif)
+<Youtube
+    url={`https://www.youtube.com/embed/PgR5wDFZils`}
+    light={true}
+    controls={true}
+    playbackRate={1}
+    playing={true}
+    autoPlay={true}
+/>
 
 Let’s see into the source code below to understand how to run this model
 with your webcam. First, we initialize the flow with a `config`
 dictionary. It contains information about the models used in the flow.
 `get_asset_file()` function will automatically download the models
 and weights files from
-[*https://github.com/DaisyLabSolutions/daisykit-assets*](https://github.com/DaisyLabSolutions/daisykit-assets),
+[*https://github.com/nrl-ai/daisykit-assets*](https://github.com/nrl-ai/daisykit-assets),
 so you don’t have to care about downloading them manually. The
 downloading only happens the first time we use the models. After that,
 you can run this code offline. You also can download all files yourself

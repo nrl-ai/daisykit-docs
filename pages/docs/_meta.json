@@ -6,6 +6,7 @@
   },
   "python": "Python",
   "cpp": "C++",
+  "android": "Android",
   "-- More": {
     "type": "separator",
     "title": "More"
