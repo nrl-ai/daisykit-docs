@@ -1,23 +1,22 @@
-import Youtube from 'components/video/youtube.jsx'
+import Youtube from "components/video/youtube.jsx";
 
 # C++: Face Detection
 
 Face detector flow in Daisykit contains a face detection model based on
-[*YOLO Fastest*](https://github.com/dog-qiuqiu/Yolo-Fastest) and a
+[_YOLO Fastest_](https://github.com/dog-qiuqiu/Yolo-Fastest) and a
 facial landmark detection model based on
-[*PFLD*](https://github.com/polarisZhao/PFLD-pytorch). In addition, to
+[_PFLD_](https://github.com/polarisZhao/PFLD-pytorch). In addition, to
 encourage makers to join hands in the fighting with COVID-19, we
 selected a face detection model that can recognize people wearing face
 masks or not.
 
-
 <Youtube
-    url={`https://www.youtube.com/embed/8iy1DztQSNY`}
-    light={true}
-    controls={true}
-    playbackRate={1}
-    playing={true}
-    autoPlay={true}
+  url={`https://www.youtube.com/embed/8iy1DztQSNY`}
+  light={true}
+  controls={true}
+  playbackRate={1}
+  playing={true}
+  autoPlay={true}
 />
 
 ## 1. Sequential flow
@@ -72,11 +71,9 @@ int main(int, char**) {
 
 Update the configurations by modifying config files in `assets/configs`.
 
-
 ## 2. Multithreading mode with graph
 
 In order to use multithreading mode (graph mode) to improve the FPS, try the example in `src/examples/demo_face_detector_graph.cpp`.
-
 
 ```cpp
 #include "daisykit/graphs/core/graph.h"
