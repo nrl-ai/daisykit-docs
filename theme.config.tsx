@@ -95,10 +95,10 @@ const config: DocsThemeConfig = {
     );
   },
   banner: {
-    key: "daisylab-to-nrl",
+    key: "daisykit-0.3.0.1",
     text: (
-      <a href="https://nrl.ai" target="_blank" rel="noreferrer">
-        🎉 DaisyLab now has become Neural Research Lab (NRL) 🎉
+      <a href="https://github.com/nrl-ai/daisykit/releases/tag/v0.3.0.1" target="_blank" rel="noreferrer">
+        🎉 DaisyKit v0.3.0.1 has been released with bugfixes for macOS 🎉
       </a>
     ),
   },
