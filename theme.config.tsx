@@ -95,10 +95,10 @@ const config: DocsThemeConfig = {
     );
   },
   banner: {
-    key: "daisykit-0.3.0.1",
+    key: "daisykit-releases",
     text: (
-      <a href="https://github.com/nrl-ai/daisykit/releases/tag/v0.3.0.1" target="_blank" rel="noreferrer">
-        🎉 DaisyKit v0.3.0.1 has been released with bugfixes for macOS 🎉
+      <a href="https://github.com/nrl-ai/daisykit/releases" target="_blank" rel="noreferrer">
+        🎉 DaisyKit v0.3.0.5 has been released with bugfixes for macOS 🎉
       </a>
     ),
   },
